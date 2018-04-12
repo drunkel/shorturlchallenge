@@ -1,31 +1,24 @@
-# Instructions
+# README
 
-- Fork this repository and use your own forked repository to work.
-- The app should be using Ruby On Rails 5+ and Ruby 2+.
-- Your code will be evaluated, so try to be clear, clean and as simple as possible.
-- Try to do commits often, then I can have an idea of your progress during the exercise.
-- Send an email to renato@noomii.com, with your repository link once you finished.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
+Things you may want to cover:
 
-## Problem
+* Ruby version
 
-### Background
+* System dependencies
 
-URL shortening is a technique on the World Wide Web in which a URL may be made substantially shorter and still direct to the required page. (wikipedia)
+* Configuration
 
-For example, "https://noomii.com/post-request" can be shortened to "https://localhost:3000/abc".
+* Database creation
 
-### Description
+* Database initialization
 
-This exercise involves building a very simple shorten URL App, from scratch like bit.ly.
+* How to run the test suite
 
-Given an URL from an external website your App should be able to generate an unique shortened URL. The user also should be able to access the original website through the generated URL.
+* Services (job queues, cache servers, search engines, etc.)
 
-Front-end should be very simple, just an input text and a button, when the user clicks the button, the page should show the shortened URL.
+* Deployment instructions
 
-#### Requirements
-
-- Do not use a gem to solve the main problem (shortening an URL)
-- Write tests with rspec for the models and controllers
-
-
+* ...
