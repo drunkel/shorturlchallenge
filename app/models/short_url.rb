@@ -14,5 +14,4 @@ class ShortUrl < ApplicationRecord
     return if self.short_url.present?
     self.short_url = SecureRandom.hex(2)
   end
-
 end

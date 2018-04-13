@@ -1,4 +1,16 @@
 class ShortUrlsController < ApplicationController
+
+  def create
+    @errors = []
+    url = params[:url]
+    begin
+      @short_url = ShortUrlPersistenceService.new(url).save!
+    rescue StandardError
+      @errors << 'Something went wrong. Please try again later.'
+    end
+    render :index
+  end
+
   def show
     short_url = ShortUrl.find_by(short_url: params[:short_url])
 
