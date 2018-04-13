@@ -28,5 +28,18 @@ RSpec.describe ShortUrlPersistenceService do
         end
       end
     end
+
+    context 'when an invalid url is given' do
+      let(:url) { 'lol' }
+
+      it 'records the error' do
+        subject
+        expect(service.errors).to_not be_empty
+      end
+
+      it 'does not save the url' do
+        expect{ subject }.to_not change{ ShortUrl.count }
+      end
+    end
   end
 end

@@ -15,6 +15,11 @@ class ShortUrlPersistenceService
 
   # Attempt to save the ShortUrl and handle case of collisions
   def save!
+    unless valid_url?(@url)
+      @errors << 'Invalid URL'
+      return
+    end
+
     attemps = 0
     short_url = ShortUrl.new(original_url: @url)
     begin
@@ -31,5 +36,14 @@ class ShortUrlPersistenceService
     rescue StandardError => e
       @errors << e.message
     end
+  end
+
+  private
+
+  def valid_url?(uri)
+    uri = URI.parse(uri)
+    uri.host.present?
+  rescue URI::InvalidURIError
+    false
   end
 end

@@ -3,11 +3,18 @@ class ShortUrlsController < ApplicationController
   def create
     @errors = []
     url = params[:url]
+
+    service = ShortUrlPersistenceService.new(url)    
     begin
-      @short_url = ShortUrlPersistenceService.new(url).save!
+      @short_url = service.save!
     rescue StandardError
       @errors << 'Something went wrong. Please try again later.'
     end
+
+    if service.errors.any?
+      service.errors.each { |e| @errors << e }
+    end
+
     render :index
   end
 

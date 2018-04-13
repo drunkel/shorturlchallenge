@@ -31,7 +31,7 @@ RSpec.describe ShortUrlsController, type: :controller do
     subject { post :create, params: { url: test_url } }
 
     it 'Sends the url to the persistence service' do
-      expect_any_instance_of(ShortUrlPersistenceService).to receive(:initialize).with(test_url)
+      expect_any_instance_of(ShortUrlPersistenceService).to receive(:initialize).with(test_url).and_call_original
       subject
     end
   end
