@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Short URL generator. Forked from: https://github.com/renatomolina/shorturlchallenge
 
-Things you may want to cover:
+The app takes in a valid URL and creates a short version of it. There is minimal validation of the URL.
 
-* Ruby version
+To run:
+1. `bundle install`
+2. `rails s`
+3. go to `http://localhost:3000`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Known issues/future improvements:
+1. Duplicate URLs are allowed.
+2. No expiration for URLS. Eventually the system will run out of URLs.
+3. Validation of urls is minimal and could be improved.
